@@ -14,11 +14,19 @@ let package =
         targets: ["SwiftUIHaptics"]
       ),
     ],
-    dependencies: [],
+    dependencies: [
+      .package(
+        name: "SwiftFoundationExtensions",
+        url: "https://github.com/xiiagency/SwiftFoundationExtensions",
+        .branchItem("main")
+      ),
+    ],
     targets: [
       .target(
         name: "SwiftUIHaptics",
-        dependencies: []
+        dependencies: [
+          "SwiftFoundationExtensions"
+        ]
       ),
       // NOTE: Re-enable when tests are added.
 //      .testTarget(
